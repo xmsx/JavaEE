@@ -37,18 +37,82 @@ public class UserDAOImpl extends baseDAO implements UserDAO {
 	@Override
 	public int insertUser(Users user) {
 		// TODO Auto-generated method stub
+		java.sql.PreparedStatement ps=null;
+		Connection connection=null;
+		int addSuccessful=0;
+		try {
+			String sql="insert into Users values(?,?,?,?);";
+			connection= JDBCUtils.getConnection();
+			ps=connection.prepareStatement(sql);
+			ps.setInt(1, user.getUserid());
+			ps.setString(2, user.getUsername());
+			ps.setString(3, user.getPassword());
+			ps.setString(4, user.getAddress());
+
+			//System.out.println(ps.toString());
+			addSuccessful=ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			JDBCUtils.free(null, ps, connection);
+		}
+		if (addSuccessful>0) {
+			return user.getUserid();
+		}
 		return 0;
 	}
 
 	@Override
 	public int updateUser(Users user) {
 		// TODO Auto-generated method stub
+		java.sql.PreparedStatement ps=null;
+		Connection connection=null;
+		int modifySuccessful=0;
+		try {
+			String sql="update USER set UserName='"+user.getUsername()+"',UserPassword='"+user.getPassword()+"',Address='"+user.getAddress()+"' where UserId='"+user.getUserid()+"'";
+			connection= JDBCUtils.getConnection();
+			ps=connection.prepareStatement(sql);
+
+			//System.out.println(ps.toString());
+			modifySuccessful=ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			JDBCUtils.free(null, ps, connection);
+		}
+		if (modifySuccessful>0) {
+			return user.getUserid();
+		}
 		return 0;
 	}
 
 	@Override
 	public int deleteUser(Users user) {
 		// TODO Auto-generated method stub
+		java.sql.PreparedStatement ps=null;
+		Connection connection=null;
+		int removeSuccessful=0;
+		try {
+			String sql="delete from student where UserId="+user.getUserid();
+			connection= JDBCUtils.getConnection();
+			ps=connection.prepareStatement(sql);
+
+			//System.out.println(ps.toString());
+			removeSuccessful=ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			JDBCUtils.free(null, ps, connection);
+		}
+		if (removeSuccessful>0) {
+			return user.getUserid();
+		}
 		return 0;
 	}
 
