@@ -17,8 +17,8 @@ public class Users {
 	private Integer userid;
 	private String username;
 	private String password;
-	private Date createdate;
-	
+	private String address;
+
 	public Integer getUserid() {
 		return userid;
 	}
@@ -37,12 +37,11 @@ public class Users {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Date getCreatedate() {
-		return createdate;
+	public String getAddress() {
+		return address;
 	}
-	public void setCreatedate(Date createdate) {
-		this.createdate = createdate;
-	}
-	
+	public void setAddress(String address) {
+		this.address = address;
+	}	
 	
 }
