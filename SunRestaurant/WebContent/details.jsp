@@ -1,28 +1,35 @@
-<%@ page language="java" import="java.util.*,edu.cugb.xg.javaee.bean.Dish" pageEncoding="GBK"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
 <HEAD>
-<TITLE>��ѧ�һ����϶���ϵͳ</TITLE>
+<TITLE>我学我会网上订餐系统</TITLE>
 <META http-equiv=Content-Type content="text/html; charset=gb2312">
 <link rel="stylesheet" href="./css/styles.css" type="text/css" />
+
+<SCRIPT language=JavaScript type=text/JavaScript>
+<!--
+
+-->
+</SCRIPT>
 
 </HEAD>
 <BODY leftMargin=0 topMargin=0 marginheight="0" marginwidth="0">
 <table cellSpacing=0 cellPadding=0 width=776 align=center border=0>
 	<tr>
-		<td width="220" rowspan="3">��</td>
-		<td width="556" height="36">��</td>
+		<td width="220" rowspan="3">　</td>
+		<td width="556" height="36">　</td>
 	</tr>
 	<tr>
 		<TD
 			style="FONT-SIZE: 24pt; FILTER: blur(add=1, direction=120, strength=5); WIDTH: 100%; COLOR: #000000; FONT-FAMILY: arial; POSITION: relative"
-			noWrap><B><span class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XXXX</span>���϶���ϵͳ</B></TD>
+			noWrap><B><span class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XXXX</span>
+		网上订餐系统</B></TD>
 	</tr>
 	<tr>
-		<td>��</td>
+		<td>　</td>
 	</tr>
 </table>
-<% %>
 <TABLE cellSpacing=0 cellPadding=0 width=776 align=center border=0>
 	<TBODY>
 		<TR>
@@ -34,19 +41,19 @@
 						<TD align=middle><FONT
 							style="FONT-SIZE: 13px; COLOR: #000000">&nbsp;|&nbsp;</FONT><A
 							href="#" target=_self><FONT
-							style="FONT-SIZE: 13px; COLOR: #000000">��վ��ҳ</FONT></A><FONT
+							style="FONT-SIZE: 13px; COLOR: #000000">网站首页</FONT></A><FONT
 							style="FONT-SIZE: 13px; COLOR: #000000">&nbsp;|&nbsp;</FONT><A
 							href="#" target=_self><FONT
-							style="FONT-SIZE: 13px; COLOR: #000000">��������</FONT></A><FONT
+							style="FONT-SIZE: 13px; COLOR: #000000">关于我们</FONT></A><FONT
 							style="FONT-SIZE: 13px; COLOR: #000000">&nbsp;|&nbsp;</FONT><A
 							href="#" target=_self><FONT
-							style="FONT-SIZE: 13px; COLOR: #000000">���Ͱ���</FONT></A><FONT
+							style="FONT-SIZE: 13px; COLOR: #000000">定餐帮助</FONT></A><FONT
 							style="FONT-SIZE: 13px; COLOR: #000000">&nbsp;|&nbsp;</FONT><A
 							href="#" target=_self><FONT
-							style="FONT-SIZE: 13px; COLOR: #000000">���϶���</FONT></A><FONT
+							style="FONT-SIZE: 13px; COLOR: #000000">网上定餐</FONT></A><FONT
 							style="FONT-SIZE: 13px; COLOR: #000000">&nbsp;|&nbsp;</FONT><A
 							href="#" target=_self><FONT
-							style="FONT-SIZE: 13px; COLOR: #000000">�ͷ�����</FONT></A><FONT
+							style="FONT-SIZE: 13px; COLOR: #000000">客服中心</FONT></A><FONT
 							style="FONT-SIZE: 13px; COLOR: #000000">&nbsp;|&nbsp;</FONT></TD>
 					</TR>
 				</TBODY>
@@ -78,19 +85,19 @@
 			<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
 				<TBODY>
 					<TR>
-						<TD>��</TD>
+						<TD>　</TD>
 					</TR>
 					<TR>
 						<TD background="images/003.gif" height=4></TD>
 					</TR>
 					<TR>
-						<TD>��</TD>
+						<TD>　</TD>
 				</TBODY>
 			</TABLE>
 			<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
 				<TBODY>
 					<TR>
-						<TD>��</TD>
+						<TD>　</TD>
 					</TR>
 					<TR>
 						<TD background="images/003.gif" height=4></TD>
@@ -100,7 +107,7 @@
 						<TABLE cellSpacing=0 cellPadding=0 width="94%" border=0>
 							<TBODY>
 								<TR>
-									<TD>��</TD>
+									<TD>　</TD>
 								</TR>
 							</TBODY>
 						</TABLE>
@@ -123,7 +130,7 @@
 						<TD width="90%">
 						<div class='cnt'><marquee
 							style="FONT-SIZE: 13px; COLOR: #0000FF" scrollamount='5'
-							direction='left'><IMG height=15 src="images/tp009.gif" width=15> ��ӭ${param.loginName }ʹ����ѧ�һ����϶���ϵͳ��ף���ò���죡</marquee></div>
+							direction='left'><IMG height=15 src="images/tp009.gif" width=15> 欢迎您使用我学我会网上订餐系统，祝您用餐愉快！</marquee></div>
 						&nbsp;&nbsp;</TD>
 					</TR>
 				</TBODY>
@@ -145,80 +152,62 @@
 							<TBODY>
 								<TR bgColor=#dadada>
 
-									<TD width="100%" align="right"><a href="viewcart.jsp" target="_blank">
-                                    <img
-										src="images/lcart_cn.gif" border=0 width="97" height="30"></a></TD>
+									<TD width="100%" align="center">我学我会网上点餐系统用户请直接登录</TD>
 								</TR>
 							</TBODY>
 						</TABLE>
 						<BR>
-						<TABLE cellSpacing=2 cellPadding=1 width="100%" align=center
-							border=0>
-							<TBODY>
-							<c:set var="step" value="2"></c:set>
-						<c:forEach var="currdish2" items="${requestScope.dishlist}" varStatus="status">
-							
-							   <c:if test="${status.index%step==0}">
-								<TR>
-								</c:if>
-									<TD>
-									<TABLE height="100%" cellSpacing=1 cellPadding=2 border=0>
-										<TBODY>
-											<TR>
-												<TD vAlign=top width=90 height=90><A href=#
-													target=_blank><IMG height=80 alt=���ͼƬ�鿴����
-													src="images/${currdish2.img}" width=80 border=0></A></TD>
-												<TD vAlign=top>
-												<TABLE cellSpacing=1 cellPadding=0 width="100%" align=center
-													border=0>
-													
-													<TBODY>
-														<TR>
-															<TD><A href=# target=_blank><STRONG>${currdish2.dishname}</STRONG></A></TD>
-														</TR>
-														<TR>
-															<TD height=21><FONT color=#ff0000>${currdish2.dishname}�ּۣ������${currdish2.price}Ԫ</FONT><BR>
-															<a href="#">${currdish2.dishdesc}</a>��</TD>
-														</TR>
-													</TBODY>
-													
-												</TABLE>
-												</TD>
-											</TR>
-											<TR>
-												<TD height=28>���: ${currdish2.dishid }</TD>
-												<TD>
-												<TABLE cellSpacing=1 cellPadding=0 width=145 border=0>
-													<TBODY>
-														<TR>
-															<TD align="middle" width="70"><a href="dishtocart?dishid=${currdish2.dishid }" target=_blank>
-                                                            <img
-																src="images/buy_cn.gif" border="0"
-																longdesc="shoppingCart.html" width="60" height="20"></a></TD>
-															<TD align=middle width=70><A href=detail?dishid=${currdish2.dishid } target=_blank>
-                                                            <IMG
-																src="images/detail_cn.gif" border=0 width="60" height="20"></A></TD>
-														</TR>
-													</TBODY>
-												</TABLE>
-												</TD>
-											</TR>
-										</TBODY>
-									</TABLE>
-									</TD>	
-						        
-						       </c:forEach>
-							</TBODY>
-							
-						</TABLE>
 						</TD>
 					</TR>
 				</TBODY>
 			</TABLE>
-			</TD>
-		</TR>
-	</TBODY>
-</TABLE>
+			<table width="90%" border="0" align="center" cellpadding="0"
+				cellspacing="0">
+				<tr>
+					<td width="90" height="90" valign="top"><img
+						src="images/500047.jpg" border="0" width="80" height="80"></td>
+					<td valign="top">
+					<table width="98%" border="0" cellspacing="1" cellpadding="0"
+						align="center">
+						<tr>
+							<td><strong>皮蛋瘦肉粥</strong></td>
+						</tr>
+						<tr>
+							<td height="21">原价：<strike>人民币0元</strike><br>
+							<font color="#ff0000">现价：人民币5元</font><br>
+							美味可口！</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="30">编号: 22</td>
+					<td>
+					<table width="145" border="0" cellspacing="1" cellpadding="0">
+						<tr>
+							<td align="center" width="70"><a href=#
+								onClick="window.open('shop_cart.asp?id=500047&nowmenuid=500001','shopcart','width=580,height=250,resizable=no,scrollbars=yes')">
+                            <img
+								src="images/buy_cn.gif" border=0 width="60" height="20"></a></td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+			<P align=center><STRONG><FONT size=4>详细资料</FONT></STRONG></P>
+			<HR align=center width="100%" color=#000000 noShade SIZE=1>
+
+			<P align=center><IMG
+				style="BORDER-LEFT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; WIDTH: 232px; BORDER-TOP-COLOR: #000000; POSITION: static; HEIGHT: 172px; BORDER-RIGHT-COLOR: #000000; align: "
+				height=294 alt="" hspace=0 src="images/500047.jpg" width=350
+				border=0></P>
+			<P align=center><FONT size=3>皮蛋瘦肉粥，鲜美爽口的小粥！</FONT></P>
+			<br>
+			</td>
+		</tr>
+</table>
+
+
 <TABLE cellSpacing=0 cellPadding=0 width=776 align=center border=0>
 	<TBODY>
 		<TR>
@@ -235,8 +224,8 @@
 					<TR>
 						<TD align=middle><BR>
 						<P align=center><FONT color=#000000>Copyright &copy;
-						2010&nbsp;&nbsp;&nbsp;&nbsp; XXXX���޹�˾����</FONT></P>
-						<P align=center>��</P>
+						2010&nbsp;&nbsp;&nbsp;&nbsp; XXXX有限公司所有</FONT></P>
+						<P align=center>　</P>
 						<BR>
 						<BR>
 						</TD>

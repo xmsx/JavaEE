@@ -20,14 +20,14 @@ import edu.cugb.xg.javaee.utils.PageModel;
  * Servlet implementation class LoginControl
  */
 @WebServlet("/loginControl")
-public class LoginControl extends baseControl {
+public class Control extends baseControl {
 	private int pageSize = 6;// 放到配置文件
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public LoginControl() {
+	public Control() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

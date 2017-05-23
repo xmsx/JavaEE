@@ -11,5 +11,9 @@ public interface DishDAO {
 	public ArrayList<Dish> findDishes();
 	
 	public int insertDish(Dish dish);
+	
+	public int getTotalDishs(String strsql);
+	
+	public ArrayList<Dish> findDishes(String strsql, Object[] params);
 
 }

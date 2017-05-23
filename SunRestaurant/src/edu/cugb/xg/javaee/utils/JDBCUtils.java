@@ -21,33 +21,19 @@ public class JDBCUtils {
 	private static String url;
 	private static String username;
 	private static String password;
-//	private static DataSource myds = new MyDataSource();
 	private static DataSource myds = null;
 	private JDBCUtils(){
 		
 	}
+	//∂¡≈‰÷√Œƒº˛
 	static{
-//		Context ic;
-//		try {
-//			ic = new InitialContext();
-//			myds = (DataSource)ic.lookup("java:comp/env/jdbc/test");
-//		} catch (NamingException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}	 	
-//		InputStream in = JDBCUtils.class.getClassLoader().
-//				getResourceAsStream("dbconfig.properties");
 		InputStream in = JDBCUtils.class.getClassLoader().
 				getResourceAsStream("dbcpconfig.properties");
 		Properties prop = new Properties();
 		try {
 			prop.load(in);
 			myds = BasicDataSourceFactory.createDataSource(prop);
-
-//			drivername = prop.getProperty("drivername");
-//			url = prop.getProperty("url");
-//			username = prop.getProperty("username");
-//			password = prop.getProperty("password");
+			
 		}catch(Exception ee){
 			ee.printStackTrace();
 		}
@@ -68,18 +54,6 @@ public class JDBCUtils {
 			e.printStackTrace();
 		}
 		return conn;
-//		Connection conn = null;
-//		try {
-//			Class.forName(drivername);
-//			conn =  DriverManager.getConnection(url, username, password);
-//		} catch (ClassNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		return conn;
 	}
 
 	/**
