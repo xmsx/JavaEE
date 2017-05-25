@@ -50,8 +50,8 @@ public class UserDAOImpl extends baseDAO implements UserDAO {
 	@Override
 	public int deleteUser(Users user) {
 		// TODO Auto-generated method stub
-		String sql = "delete from users where userid=?";
-		Object[] params = {user.getUserid()};
+		String sql = "delete from users where username=?";
+		Object[] params = {user.getUsername()};
 		return modifyObj(sql, params);
 	}
 
