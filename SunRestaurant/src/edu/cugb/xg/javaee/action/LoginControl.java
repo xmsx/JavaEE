@@ -21,7 +21,7 @@ import edu.cugb.xg.javaee.utils.PageModel;
  */
 @WebServlet("/loginControl")
 public class LoginControl extends baseControl {
-	private int pageSize = 6;// 放到配置文件
+	private int pageSize = 2;// 放到配置文件
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -50,6 +50,7 @@ public class LoginControl extends baseControl {
 		UserService userserv = new UserService();
 		RequestDispatcher rd = null;
 		if (userserv.validateUser(loginuser)) {
+//			response.sendRedirect("show.html");
 			// 验证通过 ，跳转到show.jsp
 			HttpSession session = request.getSession(true);
 			session.setAttribute("loginuser", loginuser);
@@ -61,6 +62,8 @@ public class LoginControl extends baseControl {
 			logger.debug(pagemodel.getTotalrecords());
 			request.setAttribute("pageModel", pagemodel);
 			// rd = request.getRequestDispatcher("show.jsp");
+			//System.out.println("hhhhhh");
+			System.out.println(pagemodel.getList().size() + "nadnfskndf");
 			rd = request.getRequestDispatcher("show2.jsp?pageNO=1&totalpages=" + pagemodel.getTotalPages());
 			rd.forward(request, response);
 		} else {
@@ -90,6 +93,7 @@ public class LoginControl extends baseControl {
 		// 跳转到show页面
 		logger.debug(pagemodel.getList());
 		request.setAttribute("dishlist", pagemodel.getList());
+		
 		request.setAttribute("pageModel", pagemodel);
 		RequestDispatcher rd = request
 				.getRequestDispatcher("show2.jsp?pageNO=" + pageNO + "&totalpages=" + pagemodel.getTotalPages());

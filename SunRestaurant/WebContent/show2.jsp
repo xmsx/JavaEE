@@ -178,7 +178,7 @@
 												width="97" height="30"> </a>
 									</TD>
 								</TR>
-								<c:forEach var="currentdish" items="${requestScope.dishlist}" varStatus="status" >								
+								<c:forEach var="currentdish" items="${requestScope.dishlist}" varStatus="status" >							
 								<c:if test="${status.index%2==0}">
 								<tr>
 								</c:if>

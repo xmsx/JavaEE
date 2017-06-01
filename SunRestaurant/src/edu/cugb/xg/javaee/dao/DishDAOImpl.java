@@ -3,6 +3,7 @@ package edu.cugb.xg.javaee.dao;
 import java.util.ArrayList;
 
 import edu.cugb.xg.javaee.bean.Dish;
+import edu.cugb.xg.javaee.bean.Users;
 
 public class DishDAOImpl extends baseDAO implements DishDAO {
 	@Override
@@ -29,13 +30,13 @@ public class DishDAOImpl extends baseDAO implements DishDAO {
 	@Override
 	public int getTotalDishs(String strsql) {
 		// TODO Auto-generated method stub
-		return 0;
+		return getTotalRecords(strsql);
 	}
 
 	@Override
 	public ArrayList<Dish> findDishes(String strsql, Object[] params) {
 		// TODO Auto-generated method stub
-		return null;
+		return findObjs(strsql,params,Dish.class);
 	}
 
 }
