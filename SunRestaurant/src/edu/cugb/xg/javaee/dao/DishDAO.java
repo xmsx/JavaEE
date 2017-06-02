@@ -6,7 +6,7 @@ import edu.cugb.xg.javaee.bean.Dish;
 
 public interface DishDAO {
 	
-	public Dish findDishByID(String dishid);
+	public Dish findDishByID(int dishid);
 	
 	public ArrayList<Dish> findDishes();
 	

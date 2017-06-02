@@ -31,6 +31,34 @@ public class LoginControl extends baseControl {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String actiontype = request.getParameter("actiontype");
+		switch (actiontype) {
+		case "login":
+			// 登录
+			loginCheck(request, response);
+			break;
+		case "pagelist":
+			// 分页显示
+			pageListView(request, response);
+			break;
+		case "detail":
+			// 显示某一个菜品的详细信息
+			showDishDetail(request, response);
+			break;
+		case "cart":
+			// 添加到购物车
+			
+		}
+
+	}
+	
 
 	/***
 	 * 登录验证
@@ -62,8 +90,6 @@ public class LoginControl extends baseControl {
 			logger.debug(pagemodel.getTotalrecords());
 			request.setAttribute("pageModel", pagemodel);
 			// rd = request.getRequestDispatcher("show.jsp");
-			//System.out.println("hhhhhh");
-			System.out.println(pagemodel.getList().size() + "nadnfskndf");
 			rd = request.getRequestDispatcher("show2.jsp?pageNO=1&totalpages=" + pagemodel.getTotalPages());
 			rd.forward(request, response);
 		} else {
@@ -102,29 +128,17 @@ public class LoginControl extends baseControl {
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * 显示某一个菜品的详细信息
+	 * @param request
+	 * @param response
+	 * @throws IOException 
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String actiontype = request.getParameter("actiontype");
-		switch (actiontype) {
-		case "login":
-			// 登录
-			loginCheck(request, response);
-			break;
-		case "pagelist":
-			// 分页显示
-			pageListView(request, response);
-			break;
-		case "detail":
-			// 显示某一个菜品的详细信息
-		case "cart":
-			// 添加到购物车
-		}
-
+	private void showDishDetail(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		// TODO Auto-generated method stub
+		DishService userserv = new DishService();
+		RequestDispatcher rd = null;
+		response.sendRedirect("details.html");
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)

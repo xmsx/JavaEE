@@ -46,4 +46,8 @@ public class DishService {
 		return dishdao.getTotalDishs(strsql);
 	}
 	
+	public Dish showDish(int dishid){
+		return dishdao.findDishByID(dishid);
+	}
+	
 }

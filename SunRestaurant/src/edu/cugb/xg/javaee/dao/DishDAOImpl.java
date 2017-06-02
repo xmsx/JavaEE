@@ -7,7 +7,7 @@ import edu.cugb.xg.javaee.bean.Users;
 
 public class DishDAOImpl extends baseDAO implements DishDAO {
 	@Override
-	public Dish findDishByID(String dishid) {
+	public Dish findDishByID(int dishid) {
 		// TODO Auto-generated method stub
 		String sql = "select * from dish where dishid= ?";
 		Object[] params= {dishid};
