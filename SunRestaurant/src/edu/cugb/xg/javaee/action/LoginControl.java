@@ -91,7 +91,7 @@ public class LoginControl extends baseControl {
 		
 		ArrayList<CartItem> cartlist = cartserv.find4Cart(user);
 		System.out.println(cartlist.size()+"222");
-		ArrayList<Cart> cart = null;
+		ArrayList<Cart> cart = new ArrayList<Cart>();
 		for(int i = 0; i < cartlist.size();i++){
 			int dishid = cartlist.get(i).getDishid();
 			Dish tmp = dishserv.get4Dish(dishid);

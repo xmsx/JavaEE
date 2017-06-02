@@ -37,7 +37,4 @@ public class Dish {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	
-
 }
