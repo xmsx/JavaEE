@@ -130,7 +130,7 @@
 						<TD width="90%">
 						<div class='cnt'><marquee
 							style="FONT-SIZE: 13px; COLOR: #0000FF" scrollamount='5'
-							direction='left'><IMG height=15 src="images/tp009.gif" width=15> 欢迎您使用我学我会网上订餐系统，祝您用餐愉快！</marquee></div>
+							direction='left'><IMG height=15 src="images/tp009.gif" width=15> 欢迎${sessionScope.loginuser.username}使用我学我会网上订餐系统，祝您用餐愉快！</marquee></div>
 						&nbsp;&nbsp;</TD>
 					</TR>
 				</TBODY>
@@ -152,7 +152,7 @@
 							<TBODY>
 								<TR bgColor=#dadada>
 
-									<TD width="100%" align="center">我学我会网上点餐系统用户请直接登录</TD>
+									<TD width="100%" align="center">我学我会网上点餐系统</TD>
 								</TR>
 							</TBODY>
 						</TABLE>
@@ -165,28 +165,28 @@
 				cellspacing="0">
 				<tr>
 					<td width="90" height="90" valign="top"><img
-						src="images/500047.jpg" border="0" width="80" height="80"></td>
+						src="images/${requestScope.dish.img}" border="0" width="80" height="80"></td>
 					<td valign="top">
 					<table width="98%" border="0" cellspacing="1" cellpadding="0"
 						align="center">
 						<tr>
-							<td><strong>皮蛋瘦肉粥</strong></td>
+							<td><strong>${requestScope.dish.dishname}</strong></td>
 						</tr>
 						<tr>
 							<td height="21">原价：<strike>人民币0元</strike><br>
-							<font color="#ff0000">现价：人民币5元</font><br>
-							美味可口！</td>
+							<font color="#ff0000">现价：人民币${requestScope.dish.price}元</font><br>
+							${requestScope.dish.dishdesc}！</td>
 						</tr>
 					</table>
 					</td>
 				</tr>
 				<tr>
-					<td height="30">编号: 22</td>
+					<td height="30">编号: ${requestScope.dish.dishid}</td>
 					<td>
 					<table width="145" border="0" cellspacing="1" cellpadding="0">
 						<tr>
-							<td align="center" width="70"><a href=#
-								onClick="window.open('shop_cart.asp?id=500047&nowmenuid=500001','shopcart','width=580,height=250,resizable=no,scrollbars=yes')">
+							<td align="center" width="70"><a href="loginControl?actiontype=adddish2&dishid=${requestScope.dish.dishid}"
+								onClick="ale()">
                             <img
 								src="images/buy_cn.gif" border=0 width="60" height="20"></a></td>
 						</tr>
@@ -199,9 +199,9 @@
 
 			<P align=center><IMG
 				style="BORDER-LEFT-COLOR: #000000; BORDER-BOTTOM-COLOR: #000000; WIDTH: 232px; BORDER-TOP-COLOR: #000000; POSITION: static; HEIGHT: 172px; BORDER-RIGHT-COLOR: #000000; align: "
-				height=294 alt="" hspace=0 src="images/500047.jpg" width=350
+				height=294 alt="" hspace=0 src="images/${requestScope.dish.img}" width=350
 				border=0></P>
-			<P align=center><FONT size=3>皮蛋瘦肉粥，鲜美爽口的小粥！</FONT></P>
+			<P align=center><FONT size=3>${requestScope.dish.dishdesc}!</FONT></P>
 			<br>
 			</td>
 		</tr>

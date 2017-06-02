@@ -69,23 +69,23 @@
 											</div>
 										</td>
 									</tr>
-									<c:forEach var="cartitem" items="${sessionScope.cart}">
+									<c:forEach var="cartitem" items="${requestScope.cartitems}">
 										<tr bgcolor="#ffffff">
 											<td width="50" align="center" height="22">
-												<font color="#000000">${cartitem.value.dish.dishid}</font>
+												<font color="#000000">${cartitem.dish.dishid}</font>
 											</td>
 											<td align="center" height="22">
-												<font color="#000000">${cartitem.value.dish.name}</font>
+												<font color="#000000">${cartitem.dish.dishname}</font>
 												<input type="hidden" name="prodid" value="500047">
 											</td>
 											<td width="104" align="center" height="22">
-												<font color="#000000">${cartitem.value.dish.price}</font>
+												<font color="#000000">${cartitem.dish.price}</font>
 											</td>
 											<td width="100" class="hh" align="center" height="22">
-												${cartitem.value.quantity}
+												${cartitem.quantity}
 											</td>
 											<td width="116" class="bb" align="center" height="22">
-												<font color="#000000">${cartitem.value.dish.price*cartitem.value.quantity}</font>
+												<font color="#000000">${cartitem.dish.price*cartitem.quantity}</font>
 											</td>
 										</tr>
 									</c:forEach>

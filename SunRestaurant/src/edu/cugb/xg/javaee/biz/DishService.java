@@ -25,11 +25,11 @@ public class DishService {
 	 */
 	public PageModel<Dish> findDish4PageList(int pageNO,int pageSize){
 		dishdao = (DishDAO) DAOFactory.newInstance("DishDAO");
-		String strsql = "select dishid Dishid,dishname Dishname,img Img,price Price from dish limit ?,?";
+		String strsql = "select dishid Dishid,dishname Dishname,price Price,dishdesc Dishdesc,img Img from dish limit ?,?";
 		int actualpageNO = (pageNO-1)*pageSize;
 		Object[] params = {actualpageNO,pageSize};
 		ArrayList<Dish> dishlist = dishdao.findDishes(strsql, params);
-		System.out.println(dishlist.size()+"sdfa");
+//		System.out.println(dishlist.get(0).getDishname());
 //		PageModel<Dish> pagemodel = new PageModel<Dish>();
 //		pagemodel.setList(dishlist);
 //		pagemodel.setPageNO(pageNO);
@@ -46,8 +46,8 @@ public class DishService {
 		return dishdao.getTotalDishs(strsql);
 	}
 	
-	public Dish showDish(int dishid){
+	public Dish get4Dish(int dishid){
+		dishdao = (DishDAO) DAOFactory.newInstance("DishDAO");
 		return dishdao.findDishByID(dishid);
 	}
-	
 }

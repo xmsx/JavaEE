@@ -9,7 +9,7 @@ public class DishDAOImpl extends baseDAO implements DishDAO {
 	@Override
 	public Dish findDishByID(int dishid) {
 		// TODO Auto-generated method stub
-		String sql = "select * from dish where dishid= ?";
+		String sql = "select dishid Dishid,dishname Dishname,price Price,dishdesc Dishdesc,img Img from dish where dishid= ?";
 		Object[] params= {dishid};
 		return (Dish)findObj(sql, params, Dish.class);
 	}
@@ -17,8 +17,8 @@ public class DishDAOImpl extends baseDAO implements DishDAO {
 	@Override
 	public ArrayList<Dish> findDishes() {
 		// TODO Auto-generated method stub
-		String sql = "select dishid Dishid,name Dishname,price Price,description Dishdesc,img Img from dish";
-		return this.findObjs(sql, null,Dish.class);
+		String sql = "select dishid Dishid,dishname Dishname,price Price,dishdesc Dishdesc,img Img from dish";
+		return findObjs(sql, null,Dish.class);
 	}
 
 	@Override

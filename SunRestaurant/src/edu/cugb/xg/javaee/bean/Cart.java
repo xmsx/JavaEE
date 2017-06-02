@@ -1,13 +1,14 @@
 package edu.cugb.xg.javaee.bean;
 
-public class CartItem  {
+public class Cart {
 	private int cartid;
-	private int dishid;
+	private Dish dish;
 	private int quantity;
-	public CartItem(int id,int dishtoadd, int number){
-		this.cartid = id;
-		this.dishid = dishtoadd;
-		this.quantity = number;
+	public Cart(int cartid,Dish dish,int quantity) {
+		// TODO Auto-generated constructor stub
+		this.cartid = cartid;
+		this.dish = dish;
+		this.quantity = quantity;
 	}
 	public int getCartid() {
 		return cartid;
@@ -15,11 +16,11 @@ public class CartItem  {
 	public void setCartid(int cartid) {
 		this.cartid = cartid;
 	}
-	public int getDishid() {
-		return dishid;
+	public Dish getDish() {
+		return dish;
 	}
-	public void setDishid(int dishid) {
-		this.dishid = dishid;
+	public void setDish(Dish dish) {
+		this.dish = dish;
 	}
 	public int getQuantity() {
 		return quantity;
@@ -27,4 +28,5 @@ public class CartItem  {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+	
 }

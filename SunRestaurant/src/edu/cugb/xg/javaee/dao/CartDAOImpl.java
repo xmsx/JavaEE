@@ -11,16 +11,17 @@ public class CartDAOImpl extends baseDAO implements CartDAO{
 	@Override
 	public ArrayList<CartItem> findCartItem(Users user) {
 		// TODO Auto-generated method stub
-		String sql = "select * from cart where userid = ?";
-		Object[] params= {user.getUserid()};
-		return findObjs(sql,params,user.getClass());
+		String sql = "select cartid Cartid,dishid Dishid,quantity Quantity from cart where username = ?";
+		
+		Object[] params= {user.getUsername()};
+		return findObjs(sql, params, CartItem.class);
 	}
 
 	@Override
-	public int insertCartItem(Dish dish , Users user, int quantity) {
+	public int insertCartItem(int dishid , String username, int quantity) {
 		// TODO Auto-generated method stub
 		String sql = "insert into cart (dishid,username,quantity) values (?,?,?);";
-		Object[] params= {dish.getDishid(),user.getUsername(),quantity};
+		Object[] params= {dishid,username,quantity};
 		return modifyObj(sql,params);
 	}
 

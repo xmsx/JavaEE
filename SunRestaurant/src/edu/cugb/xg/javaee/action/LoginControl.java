@@ -1,6 +1,7 @@
 package edu.cugb.xg.javaee.action;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,8 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import edu.cugb.xg.javaee.bean.Cart;
+import edu.cugb.xg.javaee.bean.CartItem;
 import edu.cugb.xg.javaee.bean.Dish;
 import edu.cugb.xg.javaee.bean.Users;
+import edu.cugb.xg.javaee.biz.CartService;
 import edu.cugb.xg.javaee.biz.DishService;
 import edu.cugb.xg.javaee.biz.UserService;
 import edu.cugb.xg.javaee.utils.PageModel;
@@ -52,13 +56,84 @@ public class LoginControl extends baseControl {
 			// 显示某一个菜品的详细信息
 			showDishDetail(request, response);
 			break;
-		case "cart":
-			// 添加到购物车
+		case "adddish":
+			// 添加购物车
+			add2Cart(request, response);
+			break;
+		case "adddish2":
+			// 菜品细节页面添加购物车
+			add2Cart2(request, response);
+			break;
+		case "showCart":
+			// 展示购物车
+			showCart(request, response);
 			
 		}
 
 	}
 	
+	/**
+	 * 展示购物车
+	 * @param request
+	 * @param response
+	 * @throws IOException 
+	 * @throws ServletException 
+	 */
+	private void showCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		RequestDispatcher rd = null;
+		HttpSession session = request.getSession();
+		Users user = (Users)session.getAttribute("loginuser");
+		System.out.println(user.getUsername()+"111111111");
+		
+		DishService dishserv = new DishService();
+		CartService cartserv = new CartService();
+		
+		ArrayList<CartItem> cartlist = cartserv.find4Cart(user);
+		System.out.println(cartlist.size()+"222");
+		ArrayList<Cart> cart = null;
+		for(int i = 0; i < cartlist.size();i++){
+			int dishid = cartlist.get(i).getDishid();
+			Dish tmp = dishserv.get4Dish(dishid);
+			cart.add(new Cart(cartlist.get(i).getCartid(),tmp,cartlist.get(i).getQuantity()));
+		}
+		request.setAttribute("cartitems", cart);
+		rd = request.getRequestDispatcher("showCart.jsp");
+		rd.forward(request, response);
+	}
+
+	/**
+	 * 菜品细节页面添加购物车
+	 * @param request
+	 * @param response
+	 */
+	private void add2Cart2(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * 添加购物车
+	 * @param request
+	 * @param response
+	 * @throws IOException 
+	 * @throws ServletException 
+	 */
+	private void add2Cart(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		Users user = (Users)session.getAttribute("loginuser");
+		CartService cartserv = new CartService();
+		int dishid = Integer.parseInt(request.getParameter("dishid"));
+		cartserv.add2Dish(dishid, user.getUsername(), 1);
+		//重定向到本页
+		RequestDispatcher rd = null;
+		DishService dishserv = new DishService();
+		int pageNO = Integer.parseInt(request.getParameter("pos"));;
+		PageModel<Dish> pagemodel = dishserv.findDish4PageList(pageNO, pageSize);
+		rd = request.getRequestDispatcher("show.jsp?pageNO=" + pageNO + "&totalpages=" + pagemodel.getTotalPages());
+		rd.forward(request, response);
+	}
 
 	/***
 	 * 登录验证
@@ -89,8 +164,9 @@ public class LoginControl extends baseControl {
 			request.setAttribute("dishlist", pagemodel.getList());
 			logger.debug(pagemodel.getTotalrecords());
 			request.setAttribute("pageModel", pagemodel);
+			//System.out.println(pagemodel.getList().get(0).getDishdesc());
 			// rd = request.getRequestDispatcher("show.jsp");
-			rd = request.getRequestDispatcher("show2.jsp?pageNO=1&totalpages=" + pagemodel.getTotalPages());
+			rd = request.getRequestDispatcher("show.jsp?pageNO=1&totalpages=" + pagemodel.getTotalPages());
 			rd.forward(request, response);
 		} else {
 			// 否则，重新登录
@@ -122,7 +198,7 @@ public class LoginControl extends baseControl {
 		
 		request.setAttribute("pageModel", pagemodel);
 		RequestDispatcher rd = request
-				.getRequestDispatcher("show2.jsp?pageNO=" + pageNO + "&totalpages=" + pagemodel.getTotalPages());
+				.getRequestDispatcher("show.jsp?pageNO=" + pageNO + "&totalpages=" + pagemodel.getTotalPages());
 		rd.forward(request, response);
 
 	}
@@ -132,12 +208,18 @@ public class LoginControl extends baseControl {
 	 * @param request
 	 * @param response
 	 * @throws IOException 
+	 * @throws ServletException 
 	 */
-	private void showDishDetail(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void showDishDetail(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		DishService userserv = new DishService();
+		DishService dishserv = new DishService();
 		RequestDispatcher rd = null;
-		response.sendRedirect("details.html");
+		int dishid = Integer.parseInt(request.getParameter("dishid"));
+		System.out.println(dishid+"-sadf");
+		Dish dish= dishserv.get4Dish(dishid);
+		request.setAttribute("dish", dish);
+		rd = request.getRequestDispatcher("details.jsp");
+		rd.forward(request, response);
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

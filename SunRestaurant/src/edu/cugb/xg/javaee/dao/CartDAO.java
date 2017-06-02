@@ -10,7 +10,7 @@ public interface CartDAO {
 	
 	public ArrayList<CartItem> findCartItem(Users user);
 	
-	public int insertCartItem(Dish dish,Users user,int quantity);
+	public int insertCartItem(int dishid,String username,int quantity);
 	
 	public int updateCartItem(int cartid,int quantity);
 	
