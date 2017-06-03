@@ -89,6 +89,7 @@
 											</td>
 										</tr>
 									</c:forEach>
+									
 									<tr bgcolor="#dadada">
 										<td width="50" height="22" align="center">
 											<font color="#000000">合计</font>
@@ -103,7 +104,7 @@
 											<font color="#000000">-</font>
 										</td>
 										<td width="116" class="bb" align="center" height="22">
-											<font color="#000000">￥33 </font>
+											<font color="#000000">￥${param.sum} </font>
 										</td>
 									</tr>
 								</table>
@@ -112,12 +113,13 @@
 									align="CENTER" bgcolor="#c0c0c0">
 									<tr bgcolor="#dadada">
 										<td height="10" align="center">
-											<a href="#"><font color="#000000">清空购物车</font>
+											<a href="loginControl?actiontype=deletecart"><font color="#000000">清空购物车</font>
 											</a>
 										</td>
 										<td height="10" align="center" style="cursor: hand"
 											onClick="#">
-											<font color="#000000">继续购物</font>
+											<a href="loginControl?actiontype=continue"><font color="#000000">继续购物</font>
+											</a>
 										</td>
 										<td height="10" align="center" style="cursor: hand"
 											onClick="#">

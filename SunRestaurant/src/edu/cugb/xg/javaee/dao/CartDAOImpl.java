@@ -26,7 +26,7 @@ public class CartDAOImpl extends baseDAO implements CartDAO{
 	}
 
 	@Override
-	public int updateCartItem(int cartid, int quantity) {
+	public int updateCartItem(int cartid,int quantity) {
 		// TODO Auto-generated method stub
 		String sql = "update cart set quantity = ? where cartid = ?;";
 		Object[] params = {quantity,cartid};
@@ -47,6 +47,14 @@ public class CartDAOImpl extends baseDAO implements CartDAO{
 		String sql = "delete from cart where username = ?;";
 		Object[] params = {user.getUsername()};
 		return modifyObj(sql,params);
+	}
+
+	@Override
+	public CartItem searchCartItem(int dishid, String username) {
+		// TODO Auto-generated method stub
+		String sql = "select quantity Quantity from cart where dishid = ? and username = ?;";
+		Object[] param = {dishid,username};
+		return (CartItem)findObj(sql,param,CartItem.class);
 	}
 
 }

@@ -8,7 +8,6 @@ import edu.cugb.xg.javaee.utils.DAOFactory;
 public class UserService {
 	public boolean validateUser(Users user){
 		//去DB中查找指定用户名和口令的用户
-//		UserDAO userdao = new UserDAOImpl();
 		UserDAO userdao = (UserDAO) DAOFactory.newInstance("UserDAO");
 		return userdao.findUser(user);		
 	}

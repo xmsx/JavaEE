@@ -27,4 +27,16 @@ public class CartService {
 	public int add2Dish(int dishid,String username, int quantity){
 		return cartdao.insertCartItem(dishid, username, quantity);
 	}
+	
+	public CartItem searchCartItem(int dishid,Users user){
+		return cartdao.searchCartItem(dishid, user.getUsername());
+	}
+	
+	public int updatequantity(int cartid, int quantity){
+		return cartdao.updateCartItem(cartid, quantity);
+	}
+	
+	public int deleteCart(Users user){
+		return cartdao.deleteAllCartItem(user);
+	}
 }

@@ -29,15 +29,8 @@ public class DishService {
 		int actualpageNO = (pageNO-1)*pageSize;
 		Object[] params = {actualpageNO,pageSize};
 		ArrayList<Dish> dishlist = dishdao.findDishes(strsql, params);
-//		System.out.println(dishlist.get(0).getDishname());
-//		PageModel<Dish> pagemodel = new PageModel<Dish>();
-//		pagemodel.setList(dishlist);
-//		pagemodel.setPageNO(pageNO);
-//		pagemodel.setPageSize(pageSize);
-//		pagemodel.setTotalrecords(getTotalDishs());
 		PageModel<Dish> pagemodel = new PageModel<Dish>(pageSize,pageNO,getTotalDishs(),dishlist);
 		return pagemodel;
-//		return dishdao.findDishs(strsql, params);
 	}
 	
 	public int getTotalDishs(){

@@ -12,6 +12,8 @@ public interface CartDAO {
 	
 	public int insertCartItem(int dishid,String username,int quantity);
 	
+	public CartItem searchCartItem(int dishid,String username);
+	
 	public int updateCartItem(int cartid,int quantity);
 	
 	public int deleteAllCartItem(Users user);

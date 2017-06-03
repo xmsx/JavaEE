@@ -12,7 +12,14 @@
 
 -->
 </SCRIPT>
+<script language="javascript">
 
+	function ale(){
+		alert("添加成功");
+		return true;
+	}
+	
+</script>
 </HEAD>
 <BODY leftMargin=0 topMargin=0 marginheight="0" marginwidth="0">
 <table cellSpacing=0 cellPadding=0 width=776 align=center border=0>
@@ -185,7 +192,7 @@
 					<td>
 					<table width="145" border="0" cellspacing="1" cellpadding="0">
 						<tr>
-							<td align="center" width="70"><a href="loginControl?actiontype=adddish2&dishid=${requestScope.dish.dishid}"
+							<td align="center" width="70"><a href="loginControl?actiontype=adddishbydetail&dishid=${requestScope.dish.dishid}"
 								onClick="ale()">
                             <img
 								src="images/buy_cn.gif" border=0 width="60" height="20"></a></td>
