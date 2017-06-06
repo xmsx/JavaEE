@@ -6,7 +6,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <HTML>
 <HEAD>
-<TITLE>我学我会网上订餐系统</TITLE>
+<TITLE>Sun网上订餐系统</TITLE>
 <META http-equiv=Content-Type content="text/html; charset=gb2312">
 <link rel="stylesheet" href="./css/styles.css" type="text/css" />
 
@@ -38,7 +38,7 @@
 		<tr>
 			<TD
 				style="FONT-SIZE: 24pt; FILTER: blur(add =                           1, direction =                           120, strength =                           5); WIDTH: 100%; COLOR: #000000; FONT-FAMILY: arial; POSITION: relative"
-				noWrap><B><span class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XXXX</span>网上订餐系统</B>
+				noWrap><B><span class="STYLE1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sun</span>网上订餐系统</B>
 			</TD>
 		</tr>
 		<tr>
@@ -150,7 +150,7 @@
 										<marquee style="FONT-SIZE: 13px; COLOR: #0000FF"
 											scrollamount='5' direction='left'>
 											<IMG height=15 src="images/tp009.gif" width=15>
-											欢迎${sessionScope.loginuser.username}使用我学我会网上订餐系统，祝您用餐愉快！
+											欢迎${sessionScope.loginuser.username}使用Sun网上订餐系统，祝您用餐愉快！
 										</marquee>
 									</div> &nbsp;&nbsp;
 								</TD>
