@@ -21,17 +21,17 @@ import edu.cugb.xg.javaee.biz.UserService;
 import edu.cugb.xg.javaee.utils.PageModel;
 
 /**
- * Servlet implementation class LoginControl
+ * Servlet implementation class loginControl
  */
-@WebServlet("/loginControl")
-public class LoginControl extends baseControl {
+@WebServlet("/Control")
+public class Control extends baseControl {
 	private int pageSize = 2;// 放到配置文件
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public LoginControl() {
+	public Control() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

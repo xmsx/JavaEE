@@ -113,12 +113,12 @@
 									align="CENTER" bgcolor="#c0c0c0">
 									<tr bgcolor="#dadada">
 										<td height="10" align="center">
-											<a href="loginControl?actiontype=deletecart"><font color="#000000">清空购物车</font>
+											<a href="Control?actiontype=deletecart"><font color="#000000">清空购物车</font>
 											</a>
 										</td>
 										<td height="10" align="center" style="cursor: hand"
 											onClick="#">
-											<a href="loginControl?actiontype=continue"><font color="#000000">继续购物</font>
+											<a href="Control?actiontype=continue"><font color="#000000">继续购物</font>
 											</a>
 										</td>
 										<td height="10" align="center" style="cursor: hand"

@@ -169,7 +169,7 @@
 						<TBODY>
 							<TR bgColor=#dadada>
 								<TD width="100%" align="right" colspan="2"><a
-									href="loginControl?actiontype=showCart"> <img src="images/lcart_cn.gif" border=0
+									href="Control?actiontype=showCart"> <img src="images/lcart_cn.gif" border=0
 										width="97" height="30">
 								</a></TD>
 							</TR>
@@ -184,7 +184,7 @@
 										<TBODY>
 											<TR>
 												<TD vAlign=top width=90 height=90><A
-													href="loginControl?actiontype=detail&dishid=${currentdish.dishid}" target=_blank><IMG
+													href="Control?actiontype=detail&dishid=${currentdish.dishid}" target=_blank><IMG
 														height=80 alt=点击图片查看内容 src="images/${currentdish.img}"
 														width=80 border=0> </A></TD>
 												<TD vAlign=top>
@@ -204,12 +204,12 @@
 																	<TABLE cellSpacing=1 cellPadding=0 width=145 border=0>
 																		<TBODY>
 																			<TR>
-																				<TD align="middle" width="70"><a href="loginControl?actiontype=adddish&dishid=${currentdish.dishid}&pos=${param.pageNO}" onclick="ale()">
+																				<TD align="middle" width="70"><a href="Control?actiontype=adddish&dishid=${currentdish.dishid}&pos=${param.pageNO}" onclick="ale()">
 																						<img src="images/buy_cn.gif" border="0"
 																						longdesc="shoppingCart.html" width="60"
 																						height="20">
 																				</a></TD>
-																				<TD align=middle width=70><A href="loginControl?actiontype=detail&dishid=${currentdish.dishid}"
+																				<TD align=middle width=70><A href="Control?actiontype=detail&dishid=${currentdish.dishid}"
 																					target=_blank> <IMG src="images/detail_cn.gif"
 																						border=0 width="60" height="20"></A></TD>
 																			</TR>
@@ -240,15 +240,15 @@
 								<td>
 									<div align="right">
 										<a name="btnTopPage" id="btnTopPage"
-											href="loginControl?actiontype=pagelist&pageNO=1" title="首页">|&lt;&lt;
+											href="Control?actiontype=pagelist&pageNO=1" title="首页">|&lt;&lt;
 										</a>&nbsp; <a name="btnPreviousPage" id="btnPreviousPage"
-											href="loginControl?actiontype=pagelist&pageNO=${requestScope.pageModel.prevPageNO}"
+											href="Control?actiontype=pagelist&pageNO=${requestScope.pageModel.prevPageNO}"
 											title="上页"> &lt; </a>&nbsp; <a name="btnNextPage"
 											id="btnNextPage"
-											href="loginControl?actiontype=pagelist&pageNO=${requestScope.pageModel.nextPageNO}"
+											href="Control?actiontype=pagelist&pageNO=${requestScope.pageModel.nextPageNO}"
 											title="下页"> &gt; </a>&nbsp; <a name="btnBottomPage"
 											id="btnBottomPage"
-											href="loginControl?actiontype=pagelist&pageNO=${requestScope.pageModel.bottomPageNO}"
+											href="Control?actiontype=pagelist&pageNO=${requestScope.pageModel.bottomPageNO}"
 											title="尾页"> &gt;&gt;|</a>
 
 									</div>
